@@ -4,19 +4,12 @@ const cors = require('cors');
 const dotEnv = require('dotenv');
 
 // Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
+
+const typeDefs = require('./typeDefs');
 
 // Provide resolver functions for your schema fields
-const resolvers = {
-    Query: {
-        hello: () => 'Hello world!',
-    },
-};
 
+const resolvers = require('./resolver');
 // set env variables
 dotEnv.config();
 
