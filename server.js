@@ -2,7 +2,9 @@ const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
 const cors = require('cors');
 const dotEnv = require('dotenv');
-
+const { connection } = require('./database/util');
+//dbconnectivity
+connection();
 // Construct a schema, using GraphQL schema language
 
 const typeDefs = require('./typeDefs');
@@ -23,7 +25,7 @@ app.use(express.json());
 
 const apolloServer = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
 });
 
 apolloServer.applyMiddleware({ app, path: '/graphql' });

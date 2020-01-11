@@ -13,8 +13,8 @@ const typeDefs = gql`
 `;
 
 module.exports = [
-    typeDefs,
-    userTypeDefs,
-    taskTypeDefs
+  typeDefs,
+  userTypeDefs,
+  taskTypeDefs
 ]
 
